@@ -1,0 +1,2 @@
+class FourPlayersController < ApplicationController
+end

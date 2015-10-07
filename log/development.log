@@ -1,0 +1,101 @@
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (3.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCards (20151007131811)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "suit" varchar, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151007131811"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to CreateDecks (20151007131921)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "decks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151007131921"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "decks" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-10-07 13:50:52.867188"], ["updated_at", "2015-10-07 13:50:52.867188"]]
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "decks" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-10-07 13:51:17.015850"], ["updated_at", "2015-10-07 13:51:17.015850"]]
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "decks" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-10-07 13:51:30.643620"], ["updated_at", "2015-10-07 13:51:30.643620"]]
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "decks" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-10-07 13:51:37.854239"], ["updated_at", "2015-10-07 13:51:37.854239"]]
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "decks" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-10-07 13:52:05.255822"], ["updated_at", "2015-10-07 13:52:05.255822"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "2"], ["created_at", "2015-10-07 13:52:05.267481"], ["updated_at", "2015-10-07 13:52:05.267481"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "3"], ["created_at", "2015-10-07 13:52:05.269072"], ["updated_at", "2015-10-07 13:52:05.269072"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "4"], ["created_at", "2015-10-07 13:52:05.270274"], ["updated_at", "2015-10-07 13:52:05.270274"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "5"], ["created_at", "2015-10-07 13:52:05.271295"], ["updated_at", "2015-10-07 13:52:05.271295"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "6"], ["created_at", "2015-10-07 13:52:05.272374"], ["updated_at", "2015-10-07 13:52:05.272374"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "7"], ["created_at", "2015-10-07 13:52:05.273619"], ["updated_at", "2015-10-07 13:52:05.273619"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "8"], ["created_at", "2015-10-07 13:52:05.274682"], ["updated_at", "2015-10-07 13:52:05.274682"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "9"], ["created_at", "2015-10-07 13:52:05.275672"], ["updated_at", "2015-10-07 13:52:05.275672"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "10"], ["created_at", "2015-10-07 13:52:05.276718"], ["updated_at", "2015-10-07 13:52:05.276718"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "J"], ["created_at", "2015-10-07 13:52:05.279660"], ["updated_at", "2015-10-07 13:52:05.279660"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "Q"], ["created_at", "2015-10-07 13:52:05.283014"], ["updated_at", "2015-10-07 13:52:05.283014"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "club"], ["value", "K"], ["created_at", "2015-10-07 13:52:05.286668"], ["updated_at", "2015-10-07 13:52:05.286668"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "club"], ["value", "A"], ["created_at", "2015-10-07 13:52:05.287842"], ["updated_at", "2015-10-07 13:52:05.287842"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "2"], ["created_at", "2015-10-07 13:52:05.288905"], ["updated_at", "2015-10-07 13:52:05.288905"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "3"], ["created_at", "2015-10-07 13:52:05.289945"], ["updated_at", "2015-10-07 13:52:05.289945"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "4"], ["created_at", "2015-10-07 13:52:05.290889"], ["updated_at", "2015-10-07 13:52:05.290889"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "5"], ["created_at", "2015-10-07 13:52:05.291785"], ["updated_at", "2015-10-07 13:52:05.291785"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "6"], ["created_at", "2015-10-07 13:52:05.292742"], ["updated_at", "2015-10-07 13:52:05.292742"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "7"], ["created_at", "2015-10-07 13:52:05.293632"], ["updated_at", "2015-10-07 13:52:05.293632"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "8"], ["created_at", "2015-10-07 13:52:05.294639"], ["updated_at", "2015-10-07 13:52:05.294639"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "9"], ["created_at", "2015-10-07 13:52:05.295564"], ["updated_at", "2015-10-07 13:52:05.295564"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "10"], ["created_at", "2015-10-07 13:52:05.296535"], ["updated_at", "2015-10-07 13:52:05.296535"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "J"], ["created_at", "2015-10-07 13:52:05.297429"], ["updated_at", "2015-10-07 13:52:05.297429"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "Q"], ["created_at", "2015-10-07 13:52:05.298307"], ["updated_at", "2015-10-07 13:52:05.298307"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "heart"], ["value", "K"], ["created_at", "2015-10-07 13:52:05.299177"], ["updated_at", "2015-10-07 13:52:05.299177"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "heart"], ["value", "A"], ["created_at", "2015-10-07 13:52:05.300041"], ["updated_at", "2015-10-07 13:52:05.300041"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "2"], ["created_at", "2015-10-07 13:52:05.300995"], ["updated_at", "2015-10-07 13:52:05.300995"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "3"], ["created_at", "2015-10-07 13:52:05.301936"], ["updated_at", "2015-10-07 13:52:05.301936"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "4"], ["created_at", "2015-10-07 13:52:05.302796"], ["updated_at", "2015-10-07 13:52:05.302796"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "5"], ["created_at", "2015-10-07 13:52:05.303646"], ["updated_at", "2015-10-07 13:52:05.303646"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "6"], ["created_at", "2015-10-07 13:52:05.304568"], ["updated_at", "2015-10-07 13:52:05.304568"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "7"], ["created_at", "2015-10-07 13:52:05.305420"], ["updated_at", "2015-10-07 13:52:05.305420"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "8"], ["created_at", "2015-10-07 13:52:05.306285"], ["updated_at", "2015-10-07 13:52:05.306285"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "9"], ["created_at", "2015-10-07 13:52:05.307172"], ["updated_at", "2015-10-07 13:52:05.307172"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "10"], ["created_at", "2015-10-07 13:52:05.308140"], ["updated_at", "2015-10-07 13:52:05.308140"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "J"], ["created_at", "2015-10-07 13:52:05.309100"], ["updated_at", "2015-10-07 13:52:05.309100"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "Q"], ["created_at", "2015-10-07 13:52:05.310018"], ["updated_at", "2015-10-07 13:52:05.310018"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "spade"], ["value", "K"], ["created_at", "2015-10-07 13:52:05.310915"], ["updated_at", "2015-10-07 13:52:05.310915"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "spade"], ["value", "A"], ["created_at", "2015-10-07 13:52:05.311830"], ["updated_at", "2015-10-07 13:52:05.311830"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "2"], ["created_at", "2015-10-07 13:52:05.319266"], ["updated_at", "2015-10-07 13:52:05.319266"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "3"], ["created_at", "2015-10-07 13:52:05.320347"], ["updated_at", "2015-10-07 13:52:05.320347"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "4"], ["created_at", "2015-10-07 13:52:05.321384"], ["updated_at", "2015-10-07 13:52:05.321384"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "5"], ["created_at", "2015-10-07 13:52:05.322649"], ["updated_at", "2015-10-07 13:52:05.322649"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "6"], ["created_at", "2015-10-07 13:52:05.323803"], ["updated_at", "2015-10-07 13:52:05.323803"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "7"], ["created_at", "2015-10-07 13:52:05.324797"], ["updated_at", "2015-10-07 13:52:05.324797"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "8"], ["created_at", "2015-10-07 13:52:05.325830"], ["updated_at", "2015-10-07 13:52:05.325830"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "9"], ["created_at", "2015-10-07 13:52:05.326794"], ["updated_at", "2015-10-07 13:52:05.326794"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "10"], ["created_at", "2015-10-07 13:52:05.328879"], ["updated_at", "2015-10-07 13:52:05.328879"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "J"], ["created_at", "2015-10-07 13:52:05.331066"], ["updated_at", "2015-10-07 13:52:05.331066"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "Q"], ["created_at", "2015-10-07 13:52:05.332911"], ["updated_at", "2015-10-07 13:52:05.332911"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["suit", "diamond"], ["value", "K"], ["created_at", "2015-10-07 13:52:05.335135"], ["updated_at", "2015-10-07 13:52:05.335135"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("suit", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["suit", "diamond"], ["value", "A"], ["created_at", "2015-10-07 13:52:05.337520"], ["updated_at", "2015-10-07 13:52:05.337520"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (3.8ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[36mCard Load (3.5ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
