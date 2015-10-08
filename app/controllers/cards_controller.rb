@@ -20,7 +20,6 @@ class CardsController < ApplicationController
     @player_two_cards = shuffled_cards[0]
     shuffled_cards[1].pop
     @player_one_cards = shuffled_cards[1] << @player_one_must_card
-    @initial_floor_cards = @player_one_rest_cards
     return @initial_floor_cards, @player_one_cards, @player_two_cards
   end
 
