@@ -994,3 +994,7 @@ Completed   in 287644ms (ActiveRecord: 1.2ms)
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))[0m
   [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))[0m
+  [1m[36mCard Load (1.1ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards"
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()

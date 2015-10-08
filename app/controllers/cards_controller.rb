@@ -10,11 +10,12 @@ class CardsController < ApplicationController
     @player_one_must_card = shuffled_cards.where(value: %w(9 10 J Q K)).first
     shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @player_one_must_card.value, @player_one_must_card.suit)
 
-    @initial_floor_cards = shuffled_cards.first(limit = "4")
+    shuffled_cards = shuffled_cards.to_a
+    @initial_floor_cards = shuffled_cards.pop(4)
     #shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @initial_floor_cards[0].value, @initial_floor_cards[0].suit).where.not("value = ? and suit = ?", @initial_floor_cards[1].value, @initial_floor_cards[1].suit).where.not("value = ? and suit = ?", @initial_floor_cards[2].value, @initial_floor_cards[2].suit).where.not("value = ? and suit = ?", @initial_floor_cards[3].value, @initial_floor_cards[3].suit)
-    4.times do |index|
-      shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @initial_floor_cards[index].value, @initial_floor_cards[index].suit)
-    end
+    #4.times do |index|
+    #  shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @initial_floor_cards[index].value, @initial_floor_cards[index].suit)
+    #end
 
     shuffled_cards = shuffled_cards.in_groups(2)
     @player_two_cards = shuffled_cards[0]
@@ -27,11 +28,12 @@ class CardsController < ApplicationController
     @player_one_must_card = shuffled_cards.where(value: %w(9 10 J Q K)).first
     shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @player_one_must_card.value, @player_one_must_card.suit)
 
-    @initial_floor_cards = shuffled_cards.first(limit = "4")
+    shuffled_cards = shuffled_cards.to_a
+    @initial_floor_cards = shuffled_cards.pop(4)
     #shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @player_one_rest_cards[0].value, @player_one_rest_cards[0].suit).where.not("value = ? and suit = ?", @player_one_rest_cards[1].value, @player_one_rest_cards[1].suit).where.not("value = ? and suit = ?", @player_one_rest_cards[2].value, @player_one_rest_cards[2].suit).where.not("value = ? and suit = ?", @player_one_rest_cards[3].value, @player_one_rest_cards[3].suit)
-    4.times do |index|
-      shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @initial_floor_cards[index].value, @initial_floor_cards[index].suit)
-    end
+    #4.times do |index|
+    #  shuffled_cards = shuffled_cards.where.not("value = ? and suit = ?", @initial_floor_cards[index].value, @initial_floor_cards[index].suit)
+    #end
 
 
     shuffled_cards = shuffled_cards.in_groups(4)
