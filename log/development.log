@@ -979,3 +979,18 @@ Processing by CardsController#all_shuffled_cards as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = 'J' and suit = 'club'))  ORDER BY random() LIMIT 4[0m
   [1m[35mCACHE (0.0ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = 'J' and suit = 'club')) AND (NOT (value = 'Q' and suit = 'diamond')) AND (NOT (value = 'J' and suit = 'diamond')) AND (NOT (value = 'K' and suit = 'club')) AND (NOT (value = '7' and suit = 'heart'))  ORDER BY random()
 Completed   in 287644ms (ActiveRecord: 1.2ms)
+  [1m[36mCard Load (2.3ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.6ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT  "cards".* FROM "cards"  ORDER BY random() LIMIT 4[0m
+  [1m[35mCard Load (0.6ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '8' and suit = 'club'))  ORDER BY random()
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club'))[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond'))  ORDER BY random()
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond'))[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart'))  ORDER BY random()
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart'))[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))  ORDER BY random()
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '8' and suit = 'club')) AND (NOT (value = '6' and suit = 'diamond')) AND (NOT (value = '7' and suit = 'heart')) AND (NOT (value = 'Q' and suit = 'diamond'))[0m
