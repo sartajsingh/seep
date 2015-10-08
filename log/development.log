@@ -99,3 +99,111 @@ Migrating to CreateDecks (20151007131921)
   [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
   [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
   [1m[36mCard Load (3.5ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[36mCard Load (4.0ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE (9)  ORDER BY random()
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT "cards".* FROM "cards" WHERE "cards"."value" = ?  ORDER BY random()  [["value", "9 10"]]
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10')  ORDER BY random()[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random()
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE ("cards"."value" != ?)  ORDER BY random()[0m  [["value", "9"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "cards" WHERE ("cards"."value" != ?) AND ("cards"."value" != ?)  [["value", "9"], ["value", "9"]]
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random()
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 2[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = 48  ORDER BY random() LIMIT 1
+SQLite3::SQLException: no such column: id.offset: SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = 48  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = '48'  ORDER BY random() LIMIT 1[0m
+SQLite3::SQLException: no such column: id.offset: SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = '48'  ORDER BY random() LIMIT 1
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = 48 AND "id"."limit" = 3  ORDER BY random() LIMIT 1[0m
+SQLite3::SQLException: no such column: id.offset: SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "id"."offset" = 48 AND "id"."limit" = 3  ORDER BY random() LIMIT 1
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE "cards"."id" IN (NULL, NULL)[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT 1  [["id", nil]]
+  [1m[36mCard Load (0.1ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT 1[0m  [["id", nil]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards"  ORDER BY "cards"."id" ASC LIMIT 3
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club')) AND "cards"."id" = ?  ORDER BY random() LIMIT 1  [["id", 3]]
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE (NOT (value = '9' and suit = 'club'))  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.6ms)[0m  SELECT "cards".* FROM "cards"  ORDER BY random()
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards"  ORDER BY random() LIMIT 3
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club'))  ORDER BY random()[0m
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club'))  ORDER BY random()
+  [1m[35mCard Load (0.3ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club'))  ORDER BY random()
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club'))  ORDER BY random()
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3'))  ORDER BY random()[0m
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3'))  ORDER BY random()
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND "cards"."value" IN ('9', '7', '10', '3')  ORDER BY random()
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND "cards"."value" IN ('9', '7', '10', '3')  ORDER BY random()
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND "cards"."value" IN ('9', '7', '10', '3') AND ("cards"."value" NOT IN ('9', '7', '10', '3'))  ORDER BY random()[0m
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE (NOT (value = '9','7','10','3' and suit = 'spade','spade','heart','club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND ("cards"."suit" NOT IN ('spade', 'spade', 'heart', 'club')) AND ("cards"."value" NOT IN ('9', '7', '10', '3')) AND "cards"."value" IN ('9', '7', '10', '3') AND ("cards"."value" NOT IN ('9', '7', '10', '3'))  ORDER BY random()
+  [1m[36mCard Load (3.7ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.4ms)[0m  [1mSELECT  "cards".* FROM "cards"  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('10', '7', '4', '10'))  ORDER BY random()
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('10', '7', '4', '10')) AND (NOT (value = '10','7','4','10' and suit = 'heart','spade','spade','heart'))  ORDER BY random()[0m
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('10', '7', '4', '10')) AND (NOT (value = '10','7','4','10' and suit = 'heart','spade','spade','heart'))  ORDER BY random()
+  [1m[35mCard Load (0.4ms)[0m  SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('10', '7', '4', '10')) AND (NOT (value = '10','7','4','10' and suit = 'heart','spade','spade','heart')) AND ("cards"."value" NOT IN ('10', '7', '4', '10'))  ORDER BY random()
+SQLite3::SQLException: near ",": syntax error: SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('10', '7', '4', '10')) AND (NOT (value = '10','7','4','10' and suit = 'heart','spade','spade','heart')) AND ("cards"."value" NOT IN ('10', '7', '4', '10'))  ORDER BY random()
+  [1m[36mCard Load (1.1ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.5ms)[0m  [1mSELECT "cards".* FROM "cards"  ORDER BY random()[0m
+  [1m[35mCard Load (0.4ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."value" IN ('9', '10', 'J', 'Q', 'K')  ORDER BY random() LIMIT 1
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards"  ORDER BY random() LIMIT 3[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('9', '8', '2', '9')) AND ("cards"."suit" NOT IN ('heart', 'spade', 'club', 'heart'))  ORDER BY random()
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE ("cards"."value" NOT IN ('9', '8', '2', '9')) AND ("cards"."suit" NOT IN ('heart', 'spade', 'club', 'heart'))[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT "cards".* FROM "cards" WHERE ("cards"."value" NOT IN ('9', '8', '2', '9')) AND ("cards"."suit" NOT IN ('heart', 'spade', 'club', 'heart'))  ORDER BY random()
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "cards" WHERE ("cards"."value" NOT IN ('9', '8', '2', '9')) AND ("cards"."suit" NOT IN ('heart', 'spade', 'club', 'heart'))[0m
